@@ -1,11 +1,11 @@
 #include <string>
 #include "Empregado.hpp"
+#include "Engenheiro.hpp"
 
-class Engenheiro : public Empregado {
+Engenheiro::Engenheiro(std::string a, double b, double c, double d) : Empregado(a, b, c), projetos(d) {}
 
-  public:
-    std::string nome;  
-	int projetos;
-	
-};
-
+void Engenheiro::print() const
+{
+    this->defaultPrint();
+    std::cout << "Projetos: " << this->projetos << std::endl;
+}
